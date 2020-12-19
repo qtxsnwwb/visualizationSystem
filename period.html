@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>可视化项目</title>
+    <link rel="stylesheet" href="css/period.css" />
+</head>
+<body>
+<!-- 菜单栏 -->
+<div class="menu">
+	<div class="title">
+		<span>XXX数据挖掘可视化分析系统</span>
+	</div>
+	<div class="content">
+		<span class="trajVisual"><a>轨迹可视化</a></span>
+		<span class="frequent"><a>频繁模式</a></span>
+		<span class="period" id="select"><a>周期模式</a></span>
+		<span class="occur"><a>共现模式</a></span>
+		<span class="abnormal"><a>异常模式</a></span>
+		<span class="classify"><a>目标分类识别</a></span>
+	</div>
+</div>
+<!-- 主容器 -->
+<div id="container" class="container"></div>
+<!-- 选项卡 -->
+<div class="input-card" style="width:16rem">
+    <h4 class="styleSelect">样式选择</h4>
+    <div id="map-styles" style="display:none;" class="styleMap">
+	    <div class="input-item"><input type='radio' name='mapStyle' value='dark'><span>幻影黑</span><span class="input-text">dark</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='light'><span>月光银</span><span class="input-text">light</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='whitesmoke'><span>远山黛</span><span class="input-text">whitesmoke</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='fresh'><span>草色青</span><span class="input-text">fresh</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='grey'><span>雅士灰</span><span class="input-text">grey</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='graffiti'><span>涂鸦</span><span class="input-text">graffiti</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='macaron'><span>马卡龙</span><span class="input-text">macaron</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='blue'><span>靛青蓝</span><span class="input-text">blue</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='darkblue' checked><span>极夜蓝</span><span class="input-text">darkblue</span></div>
+	    <div class="input-item"><input type='radio' name='mapStyle' value='wine'><span>酱籽</span><span class="input-text">wine</span></div>
+    </div>
+	<h4 class="mapSelect">切换卫星地图</h4>
+</div>
+<script src="https://webapi.amap.com/maps?v=1.4.15&key=10cde5063c01a4a99cd61218f69f3009&"></script>
+<script src="https://webapi.amap.com/loca?v=1.3.0&key=10cde5063c01a4a99cd61218f69f3009"></script>
+<script src="https://a.amap.com/Loca/static/dist/jquery.min.js"></script>
+<script src="js/period.js"></script>
+</body>
+</html>

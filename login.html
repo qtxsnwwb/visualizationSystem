@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>可视化项目</title>
+	<link rel="stylesheet" href="css/login.css" />
+</head>
+<body>
+<!-- 菜单栏 -->
+<div class="menu">
+	<div class="title">
+		<span>XXX数据挖掘可视化分析系统</span>
+	</div>
+</div>
+<!-- 主体容器 -->
+<div class="login-container">
+	<div class="login_con">
+		<ul class="login_tab">
+			<li id="tab" class="login_tablion">
+				<span>系统账号登录</span>
+			</li>
+		</ul>
+		<div class="login_tabcon">
+			<div class="tab-item">
+				<!-- <form id="TANGRAM_PSP_4_form" class="pass-form" autocomplete="off" action="index.html" method="post"> -->
+					<p id="TANGRAM_PSP_4_userNameWrapper" class="pass-form-item pass-form-item-userName">
+						<label for="TANGRAM_PSP_4_userName" class="pass-label pass-label-userName">
+							手机/邮箱/用户名
+						</label>
+						<input type="text" style="display: none;" />
+						<input id="TANGRAM_PSP_4_userName" type="text" name="userName" class="pass-text-input pass-text-input-userName" autocomplete="off" placeholder="请输入用户名" />
+						<span id="TANGRAM_PSP_4_userName_clearbtn" class="pass-clearbtn pass-clearbtn-userName" style="display: block;visibility: visible;opacity: 1;"></span>
+					</p>
+					<p id="TANGRAM_PSP_4_passwordWrapper" class="pass-form-item pass-form-item-password">
+						<label for="TANGRAM_PSP_4_password" id="TANGRAM_PSP_4_passwordLabel" class="pass-label pass-label-password">密码</label>
+						<input type="password" style="display: none;" />
+						<input id="TANGRAM_PSP_4_password" type="password" name="password" class="pass-text-input pass-text-input-password" autocomplete="off" placeholder="请输入密码" />
+						<span id="TRANGRAM_PSP_4_password_clearbtn" class="pass-clearbtn pass-clearbtn-password" style="display: block;visibility: visible;opacity: 1;"></span>
+					</p>
+					<p id="TANGRAM_PSP_4_submitWrapper" class="pass-form-item pass-form-item-submit">
+						<input id="TANGRAM_PSP_4_submit" type="submit" value="登录" class="pass-button pass-button-submit" style="color:rgb(255, 255, 255);" />
+					</p>
+				<!-- </form> -->
+			</div>
+		</div>
+	</div>
+</div>
+<script src="https://a.amap.com/Loca/static/dist/jquery.min.js"></script>
+<script src="js/md5.js"></script>
+<script>
+	$("#TANGRAM_PSP_4_userName_clearbtn").click(function(){
+		$("#TANGRAM_PSP_4_userName").val("");
+		$("#TANGRAM_PSP_4_userName").focus();
+	});
+	$("#TRANGRAM_PSP_4_password_clearbtn").click(function(){
+		$("#TANGRAM_PSP_4_password").val("");
+		$("#TANGRAM_PSP_4_password").focus();
+	});
+	//登录验证
+	$("#TANGRAM_PSP_4_submit").click(function(){
+		//zhangsan，123456
+		var userName = $("#TANGRAM_PSP_4_userName").val();
+		var password = $("#TANGRAM_PSP_4_password").val();
+		if(userName == "zhangsan" && $.md5(password) == "e10adc3949ba59abbe56e057f20f883e"){
+			window.location.href = "index.html";
+		}else{
+			$("#TANGRAM_PSP_4_userName").val("");
+			$("#TANGRAM_PSP_4_password").val("");
+			alert("用户名或密码错误！");
+		}
+	});
+</script>
+</body>
+</html>
